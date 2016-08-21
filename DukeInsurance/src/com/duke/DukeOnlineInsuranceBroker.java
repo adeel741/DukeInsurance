@@ -76,15 +76,4 @@ private void quoteIdCheck(UUID id) {
    }
 
 
-   // New Code.
-/*public void setTimeAdminFee(long l) {
-	this.timeForAdminCharge=l;
-}
-
-public BigDecimal setAdminFee(BigDecimal adminFee) {
-	return getStandardAdminCharge().add(adminFee);
-	//return STANDARD_ADMIN_CHARGE.add(adminFee);
-	//this.STANDARD_ADMIN_CHARGE = adminFee;
-}*/
-
 }

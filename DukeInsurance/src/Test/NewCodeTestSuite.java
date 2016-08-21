@@ -64,15 +64,5 @@ public class NewCodeTestSuite {
 	}
 	
 	
-	
-/*	
-	@Test
-	public void policyConfirmedBetweenFourAndTenMinuesHasFivePercentAdminCharge() {
-		insuranceBroker.setTimeAdminFee(testTime +(10*60*1000));
-        insuranceBroker.confirmPurchase(policy.id, "test@yahoo.com");
-        adminFee = policy.premium.multiply(BigDecimal.valueOf(0.05));
-        BigDecimal amendedAdminFee=insuranceBroker.setAdminFee(adminFee);
-        assertEquals(insuranceBroker.getStandardAdminCharge().add(amendedAdminFee).subtract(insuranceBroker.getStandardAdminCharge()), amendedAdminFee);
-	}*/
 
 }
