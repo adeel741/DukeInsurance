@@ -11,22 +11,14 @@ import java.util.*;
 
 public class DukeOnlineInsuranceBroker implements InsuranceBroker {
 	
-	AdminFeeInterface newAdminFee = new NewAdminFee();
-
+	AdminFeeInterface newAdminFee ;
+	TimeManager timeManager;
     private static final long MAX_QUOTE_AGE_MILLIS = 15 * 60 * 1000;
-
    	private Map<UUID, Quote> quotes = new HashMap<UUID, Quote>();
-   	TimeManager timeManager;
-    
-/*    private long timeForAdminCharge;
-    
-    
-    public static BigDecimal getStandardAdminCharge() {
-    	return STANDARD_ADMIN_CHARGE;
-    }*/
    	
-   	public DukeOnlineInsuranceBroker(TimeManager pTimeManager){
+    public DukeOnlineInsuranceBroker(TimeManager pTimeManager, AdminFeeInterface pNewAdminFee){
    		timeManager = pTimeManager;
+   		newAdminFee = pNewAdminFee;
    	}
 
 
@@ -51,7 +43,6 @@ public class DukeOnlineInsuranceBroker implements InsuranceBroker {
         BigDecimal adminFee = newAdminFee.generateAdminFee(timeDifference, quote.policy.premium);
         Purchase completePurchase = new Purchase(quote.policy.premium.add(adminFee), quote, timeNow, userAuthToken);
         purchaseComplete(completePurchase);
-       
     }
 
 

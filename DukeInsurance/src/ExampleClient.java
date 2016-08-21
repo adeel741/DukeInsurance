@@ -1,5 +1,6 @@
 import com.duke.DukeOnlineInsuranceBroker;
 import com.duke.InsuranceBroker;
+import com.duke.NewAdminFee;
 import com.duke.SystemTimeManager;
 import com.duke.search.Policy;
 import com.duke.search.Quote;
@@ -11,7 +12,7 @@ public class ExampleClient {
 
     public static void main(String[] args) throws Exception {
 
-        InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(new SystemTimeManager());
+        InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(new SystemTimeManager(), new NewAdminFee());
         String userAuthToken = "tom@example.com";
 
         List<Policy> searchResults = insuranceBroker.searchForCarInsurance("Audi", "A1", 2014);

@@ -18,7 +18,7 @@ import com.duke.search.Quote;
 
 public class NewCodeTestSuite {
 	AdminFeeInterface testObj = new NewAdminFee();
-	DukeOnlineInsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(new FakeTimeManager());
+	DukeOnlineInsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(new FakeTimeManager(), testObj);
 	private Map<UUID, Quote> quotes =insuranceBroker.getQuotes();
 	BigDecimal adminFee;
 	List<Policy> searchResults = insuranceBroker.searchForCarInsurance("Audi", "A1", 2014);

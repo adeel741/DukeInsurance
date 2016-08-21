@@ -25,6 +25,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.duke.DukeOnlineInsuranceBroker;
 import com.duke.InsuranceBroker;
+import com.duke.NewAdminFee;
 import com.duke.PurchaseService;
 import com.duke.insurance.Purchase;
 import com.duke.search.Policy;
@@ -42,7 +43,7 @@ public class ExisitngCodeTestClass {
 	
 	
 	@Spy
-	InsuranceBroker insuranceBrokerSpy= new DukeOnlineInsuranceBroker(new FakeTimeManager()); 
+	InsuranceBroker insuranceBrokerSpy= new DukeOnlineInsuranceBroker(new FakeTimeManager(), new NewAdminFee()); 
 
 
 	@Before
@@ -57,7 +58,7 @@ public class ExisitngCodeTestClass {
 		int year = 2015;
 
 		FakeTimeManager fakeTimeManager = new FakeTimeManager();
-		InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager);
+		InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager, new NewAdminFee());
 		assertEquals(insuranceBroker.searchForCarInsurance(make,model,year).size(), 0);
 	}
 	
@@ -68,7 +69,7 @@ public class ExisitngCodeTestClass {
 		int year = 2015;
 
 		FakeTimeManager fakeTimeManager = new FakeTimeManager();
-		InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager);
+		InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager, new NewAdminFee());
 		assertEquals(insuranceBroker.searchForCarInsurance(make,model,year).size(), 0);
 	}
 	
@@ -79,7 +80,7 @@ public class ExisitngCodeTestClass {
 		int year = 2013;
 
 		FakeTimeManager fakeTimeManager = new FakeTimeManager();
-		InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager);
+		InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager, new NewAdminFee());
 		assertEquals(insuranceBroker.searchForCarInsurance(make,model,year).size(), 1);
 	}
 	
@@ -102,7 +103,7 @@ public class ExisitngCodeTestClass {
 		FakeTimeManager fakeTimeManager = new FakeTimeManager();
        	UUID id = UUID.fromString("6ba7b810-9dad-11d1-80b4-00c04fd430c8");
     	String userAuthToken = "testing@yahoo.com";
-    	InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager);	
+    	InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager, new NewAdminFee());	
     	insuranceBroker.confirmPurchase(id, userAuthToken);
 	}
 
@@ -111,7 +112,7 @@ public class ExisitngCodeTestClass {
 
 		FakeTimeManager fakeTimeManager = new FakeTimeManager();
        	String userAuthToken = "testing@yahoo.com";
-    	InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager);	
+    	InsuranceBroker insuranceBroker = new DukeOnlineInsuranceBroker(fakeTimeManager, new NewAdminFee());	
     	List<Policy> searchResults1 = insuranceBroker.searchForCarInsurance("Audi", "A1",  2014);
         Policy policy = searchResults1.get(0);
         fakeTimeManager.AddSimulatedElapsedMinutes(16);
