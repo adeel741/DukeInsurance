@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class NewAdminFee implements AdminFeeInterface {
 	private BigDecimal adminFee = new BigDecimal(0);
 	
-	@Override
+	
 	public BigDecimal generateAdminFee(long timePassed, BigDecimal premium){
 		NoAdminFeeWhenPurchasedInThreeMinutes(timePassed, premium, 0, 0);
 		AdminFeeWhenPurchasedBetweenThreeAndTenMinutes(timePassed, premium, 0.05, 15);

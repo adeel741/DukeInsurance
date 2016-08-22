@@ -22,7 +22,7 @@ public class DukeOnlineInsuranceBroker implements InsuranceBroker {
    	}
 
 
-	@Override
+	
     public List<Policy> searchForCarInsurance(String make, String model, int year) {
 
         List<Policy> searchResults = ProductionQuotingSystem.getInstance().searchFor(make, model, year);
@@ -33,7 +33,7 @@ public class DukeOnlineInsuranceBroker implements InsuranceBroker {
     }
 
 	
-   @Override
+   
     public void confirmPurchase(UUID id, String userAuthToken) {
 	    quoteIdCheck(id);
         Quote quote = quotes.get(id);
