@@ -3,6 +3,23 @@
   <groupId>DukeInsurance</groupId>
   <artifactId>DukeInsurance</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>9.2.14.v20151106</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
